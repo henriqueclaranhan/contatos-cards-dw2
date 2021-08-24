@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --orange: rgb(255, 187, 0);
+    --purple: rgba(98, 0, 255, 0.746);
+    --gray: rgba(131, 131, 131, 0.746);
+    --pink: rgba(255, 83, 155, 0.746);
+    --red: rgba(255, 51, 51, 0.746);
+    --yellow: rgba(232, 236, 15, 0.993);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 568px){
+    #contatos {
+        grid-template-columns: repeat(1, 0.45fr);
+    }
+}
+
+@media (min-width: 569px) and (max-width: 833px){
+    #contatos {
+        grid-template-columns: repeat(2, 0.45fr);
+    }
+}
+
+@media (min-width: 834px){
+    #contatos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1080px){
+    #contatos {
+        grid-template-columns: repeat(3, 320px);
+    }
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+}
+
+h1 {
+    color: rgba(0, 0, 0, 0.89);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.76));
+    padding-top: 3rem;
+    margin-top: 2%;
+    font-size: 41px;
+}
+
+#contatos {
+    display: grid;
+    place-items: center;
+    justify-content: center;
+
+    min-width: 80%;
+    margin: 30px 0 35px 0;
+}
+
+.contato-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 215px;
+    min-height: 245px;
+    margin: 20px;
+    border-radius: 5px;
+
+    backdrop-filter: blur(4px);
+
+    transition: 0.4s;
+
+    background-color: rgba(255, 255, 255, 0.835);
+    filter: drop-shadow(5px 5px 10px rgba(80, 80, 80, 0.171));
+}
+
+.contato-card::before {
+    content: "";
+    position: fixed;
+    width: 99.2%;
+    height: 99.5%;
+    border-radius: 5px;
+}
+
+.contato-card:hover {
+    transform: scale(110%);
+}
+
+.contato-card:nth-of-type(1)::before {
+    border: 1px solid var(--orange);
+  }
+.contato-card:nth-of-type(2)::before {
+    border: 1px solid var(--purple);
+}
+.contato-card:nth-of-type(3)::before {
+    border: 1px solid var(--gray);
+}
+.contato-card:nth-of-type(4)::before {
+    border: 1px solid var(--pink);
+}
+.contato-card:nth-of-type(5)::before {
+    border: 1px solid var(--red);
+}
+.contato-card:nth-of-type(6)::before {
+    border: 1px solid var(--yellow);
+}
+
+#contatos :nth-child(1) header {
+    background-color: var(--orange);
+}
+#contatos :nth-child(2) header {
+    background-color: var(--purple);
+}
+#contatos :nth-child(3) header {
+    background-color: var(--gray);
+}
+#contatos :nth-child(4) header {
+    background-color: var(--pink);
+}
+#contatos :nth-child(5) header {
+    background-color: var(--red);
+}
+#contatos :nth-child(6) header {
+    background-color: var(--yellow);
+}
+
+header {
+    border-radius: 4px 4px 0 0;
+    height: 80px;
+    width: 100%;
+}
+
+.foto-de-perfil {
+    position: absolute;
+    align-self: center;
+    margin-top: 35px;
+    width: 70px;
+    border-radius: 50%;
+}
+
+.dados {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 41px;
+}
+
+.dados h2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 auto 0 auto;
+    max-width: 175px;
+    max-height: 29px;
+    font-size: 25.5px;
+}
+
+.contato-info {
+    position: absolute;
+    padding: 22px;
+    bottom: 0;
+}
+
+span {
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.icon {
+    fill: rgba(39, 39, 39, 0.883);
+    width: 15px;
+    margin-right: 6px;
+}
+
+span p {
+    font-size: 15px;
+    margin: 0;
+}
+
+footer {
+    padding-bottom: 35px;
+}
